@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 7%;
+            background-color: rgb(224, 224, 224);
+        }
+        p {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 300%;
+        }
+
+        button,input {
+            height: 50px;
+            width: 200px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 100%;
+            background-color: rgb(44, 44, 44);
+            color: rgb(255, 255, 255);
+        }
+
+        h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <p>DIGITE VÁRIOS NÚMEROS</p>
+    <input type="number" name="" id="campo" placeholder="ex: 1,2,4,7,9,12,43.2">
+    <br>
+    <button onclick="inserir()">Inserir</button>
+    <br>
+    <button onclick="mostrar()">Mostrar</button>
+    <br>
+    <button onclick="maior()">Mostrar o maior</button>
+    <br>
+    <button onclick="menor()">Mostrar o menor</button>
+    <br>
+    <h3 id="resultado"></h3>
+    <script>
+        var lista = []
+        var letras = lista.length
+        // inserir
+        function inserir () {
+            let numero = document.getElementById("campo").value
+            lista.push(numero)
+        }
+        // todos
+        function mostrar () {
+            document.getElementById("resultado").innerText=lista
+        }
+        // maior
+        function maior() {
+           lista.sort()
+           lista.reverse()
+            let letras = lista.length
+            document.getElementById("resultado").innerText=lista[0]
+        }
+        // menor
+        function menor() {
+            lista.sort()
+            document.getElementById("resultado").innerText=lista[letras]
+        }
+    </script>
+</body>
+</html>

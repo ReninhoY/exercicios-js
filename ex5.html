@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+    <style>
+        p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 200%;
+            color: white;
+        }
+        input {
+            font-size: 150%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(41, 41, 41);
+        }
+        button {
+            color: white;
+            font-size: 150%;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <p>Digite o comprimento</p>
+    <input type="number" name="" id="comp">
+    <br><br>
+    <p>Digite a largura</p>
+    <input type="number" name="" id="larg">
+    <br><br>
+    <button onclick="preco()">Calcular</button>
+    <p id="preco"></p>
+    <script>
+        function preco () {
+        let comp = parseFloat(document.getElementById('comp').value)
+        let larg = parseFloat(document.getElementById('larg').value)
+        document.getElementById('preco').innerText='R$'+((comp*larg)*36).toFixed(2).replace('.',',')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(41, 41, 41);
+        }
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 300%;
+            text-align: center;
+            color: white;
+        }
+        button {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        input {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <p>Digite a quilometragem percorrida</p>
+    <input type="number" name="" id="km">
+    <br><br>
+    <button onclick="calculo()">Total</button>
+    <p id="resultado"></p>
+    <script>
+        function calculo (){
+        let km = parseInt(document.getElementById('km').value)
+       document.getElementById("resultado").innerText= (km/8)+" litros"
+        }
+    </script>
+</body>
+</html>

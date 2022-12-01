@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #produtos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10vh;
+        }
+        body {
+            background-color: rgb(41, 41, 41);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .prdt {
+            padding: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: thistle;
+            border-radius: 1.5vh;
+        }
+        .resul-paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200%;
+            color: white;
+        }
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 100;
+            letter-spacing: 3px;
+            font-size: 300%;
+            color: white;
+        }
+        button {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+            border-radius: 1.5vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function add () {
+            // produto 1
+            let produto1Nome = document.getElementById("pr1-nome").value
+            let produto1Qtdd = document.getElementById("pr1-qtdd").value
+            let produto1Preco = document.getElementById("pr1-preco").value
+            // produto 2
+            let produto2Nome = document.getElementById("pr2-nome").value
+            let produto2Qtdd = document.getElementById("pr2-qtdd").value
+            let produto2Preco = document.getElementById("pr2-preco").value
+             // produto 3
+            let produto3Nome = document.getElementById("pr3-nome").value
+            let produto3Qtdd = document.getElementById("pr3-qtdd").value
+            let produto3Preco = document.getElementById("pr3-preco").value
+
+            let total1 = parseFloat (produto1Preco*produto1Qtdd)
+            document.getElementById("prod1").innerText=`O produto "${produto1Nome}" gerou R$${total1.toFixed(2).replace('.',',')}.`
+
+            let total2 = parseFloat (produto2Preco*produto2Qtdd)
+            document.getElementById("prod2").innerText=`O produto "${produto2Nome}" gerou R$${total2.toFixed(2).replace('.',',')}.`
+
+            let total3 = parseFloat (produto3Preco*produto3Qtdd)
+            document.getElementById("prod3").innerText=`O produto "${produto3Nome}" gerou R$${total1.toFixed(2).replace('.',',')}.`
+
+            let soma = total1+total2+total3
+            document.getElementById("soma-total").innerText=`O total das vendas é de R$${soma.toFixed(2).replace('.',',')}`
+        }
+    </script>
+    <h1>Calculadora de Vendas</h1>
+    <br><br>
+    <main id="produtos">
+        <!-- Produto 1 -->
+        <div class="prdt">
+            <h3>PRODUTO 1</h3>
+            <p>Digite o nome do produto</p>
+            <input type="text" name="" id="pr1-nome">
+            <br>
+            <p>Digite a quantidade vendida</p>
+            <input type="number" name="" id="pr1-qtdd">
+            <p>Digite o valor por unidade</p>
+            <input type="number" name="" id="pr1-preco">
+        </div>
+        <!-- Produto 2 -->
+        <div class="prdt">
+            <h3>PRODUTO 2</h3>
+            <p>Digite o nome do produto</p>
+            <input type="text" name="" id="pr2-nome">
+            <br>
+            <p>Digite a quantidade vendida</p>
+            <input type="number" name="" id="pr2-qtdd">
+            <p>Digite o valor por unidade</p>
+            <input type="number" name="" id="pr2-preco">
+        </div>
+        <!-- Produto 3 -->
+        <div class="prdt">
+            <h3>PRODUTO 3</h3>
+            <p>Digite o nome do produto</p>
+            <input type="text" name="" id="pr3-nome">
+            <br>
+            <p>Digite a quantidade vendida</p>
+            <input type="number" name="" id="pr3-qtdd">
+            <p>Digite o valor por unidade</p>
+            <input type="number" name="" id="pr3-preco">
+        </div>
+    </main>
+    <br><br><br>
+    <button onclick="add()">Adicionar</button>
+    <br><br><br><br><br>
+    <h1>Resulado</h1>
+    <p id="prod1" class="resul-paragrafo"></p>
+    <p id="prod2" class="resul-paragrafo"></p>
+    <p id="prod3" class="resul-paragrafo"></p>
+    <p id="soma-total" class="resul-paragrafo"></p>
+</body>
+</html>
