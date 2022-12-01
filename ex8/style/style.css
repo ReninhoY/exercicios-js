@@ -11,6 +11,15 @@ iframe {
     width: 120vh;
     height: 60vh;
 }
+@media screen and (max-width: 480px), screen and (max-height: 420px) {
+    iframe {
+        width: 75%;
+    height: 60vh;
+    }
+    img {
+        width: 10px;
+    }
+    }
 
 .nav-item::after {
     content: '';
